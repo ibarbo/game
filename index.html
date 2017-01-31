@@ -1,0 +1,40 @@
+<html>
+
+  <p>texto ejemplo --ronnin</p>
+
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+<script charset="utf-8">
+
+var canvas;
+var canvasContext;
+var ballx = 50;
+
+window.onload = function () {
+  canvas = document.getElementById('gameCanvas');
+  canvasContext = canvas.getContext('2d');
+
+  var framesPerSecond = 30;
+  setInterval(function() {
+      moveEverything();
+      drawEverything();
+  }, 1000/framesPerSecond);
+}
+
+function moveEverything() {
+  ballx = ballx + 5;
+}
+
+function drawEverything() {
+  canvasContext.fillStyle = 'green';
+  canvasContext.fillRect(0, 0, canvas.width, canvas.height) ;
+  canvasContext.fillStyle = 'black';
+  canvasContext.fillRect(0, 210, 10, 100);
+  canvasContext.fillStyle = 'white';
+  canvasContext.fillRect(ballx, 100, 10, 10);
+}
+
+</script>
+
+
+</html>
